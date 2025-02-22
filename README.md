@@ -7,10 +7,10 @@
 ## Team Information
 - **Team Name:** Hashflow
 - **Team Members:**
-  - Kotha Ashrith Reddy       - 230001043
-  - Buditi Deepak             - 230001016
+  - Kotha Ashrith Reddy             - 230001043
+  - Buditi Deepak                      - 230001016
   - Avvaru Venkata Sai Deepak - 230001011
-  - Vivek Tej Kanakam         - 230041014
+  - Vivek Tej Kanakam               - 230041014
 
 ## Project Description
 A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. It supports simultaneous message sending and receiving, peer discovery, and efficient connection management to facilitate effective networking.
