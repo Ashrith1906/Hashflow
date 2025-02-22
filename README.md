@@ -7,13 +7,14 @@
 ## Team Information
 - **Team Name:** Hashflow
 - **Team Members:**
-  - Kotha Ashrith Reddy - 230001043
-  - Buditi Deepak- 230001016
+  - Kotha Ashrith Reddy       - 230001043
+  - Buditi Deepak             - 230001016
   - Avvaru Venkata Sai Deepak - 230001011
-  - Vivek Tej Kanakam - 230041014
+  - Vivek Tej Kanakam         - 230041014
 
 ## Project Description
 A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. It supports simultaneous message sending and receiving, peer discovery, and efficient connection management to facilitate effective networking.
+
 ## Features
 - **Simultaneous Send & Receive** (Multi-threading)
 - **Peer Discovery & Tracking**
@@ -42,7 +43,7 @@ python peer.py
 ## Usage
 Upon starting, the following menu is displayed:
 ```
-Enter your name: <Team Name>
+Enter your name: <Name>
 Enter your port number: <Port>
 Server listening on port <Port>
 
@@ -63,11 +64,11 @@ Server listening on port <Port>
 2. List of active peers is displayed.
 
 ### Connecting to Active Peers
-1.Choose '3' from the menu.
-2.The system retrieves the list of known peers from which messages have been received.
-3.The program attempts to establish direct connections with these peers.
-4.Once connected, peers can exchange messages more efficiently, reducing connection overhead.
-5.The list of connected peers updates dynamically to reflect the new connections.
+1. Choose '3' from the menu.
+2. The system retrieves the list of known peers from which messages have been received.
+3. The program attempts to establish direct connections with these peers.
+4. Once connected, peers can exchange messages more efficiently, reducing connection overhead.
+5. The list of connected peers updates dynamically to reflect the new connections.
 
 ### Exiting
 - Enter `0` to quit.
@@ -94,4 +95,3 @@ Example:
 1. [Socket Programming in C](https://www.geeksforgeeks.org/socket-programming-cc/)
 2. [Linux IP Address Guide](https://www.ionos.com/digitalguide/hosting/technical-matters/get-linux-ip-address/)
 3. [Threading in Python](https://docs.python.org/3/library/threading.html)
-
