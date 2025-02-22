@@ -36,15 +36,18 @@ python peer.py
 ## Usage
 Upon starting, the following menu is displayed:
 ```
-Enter your name: <Name>
 Enter your port number: <Port>
 Server listening on port <Port>
 
-***** Menu *****
-1. Send message
-2. Query active peers
-3. Connect to active peers
-0. Quit
+----------------------------------------
+        Network Control Panel
+----------------------------------------
+1. Start Messaging Session
+2. View Active Peers
+3. Connect to Peers
+4. Disconnect from a Peer
+0. Quit Application
+----------------------------------------
 ```
 
 ### Sending Messages
@@ -62,6 +65,11 @@ Server listening on port <Port>
 3. The program attempts to establish direct connections with these peers.
 4. Once connected, peers can exchange messages more efficiently, reducing connection overhead.
 5. The list of connected peers updates dynamically to reflect the new connections.
+
+### Disconnect from a peer
+1. select '4' from the panel
+2. Enter the peer's IP address and port whom you wish to diconnect from.
+3. That Peer is Disconnected
 
 ### Exiting
 - Enter `0` to quit.
