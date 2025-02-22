@@ -2,10 +2,10 @@
 # Peer-to-Peer Chat Application
 
 ## CS 216: Introduction to Blockchain
-### Assignment 2
+### Assignment 1
 
 ## Team Information
-- **Team Name:** [Your Team Name]
+- **Team Name:** Hashflow
 - **Team Members:**
   - Kotha Ashrith Reddy - 230001043
   - Buditi Deepak- 230001016
@@ -29,12 +29,6 @@ A peer-to-peer chat application enabling simultaneous message sending and receiv
   ```
 
 ## How to Run
-### C Program:
-```sh
-gcc peer.c -o peer
-./peer
-```
-
 ### Python Program:
 ```sh
 python peer.py
