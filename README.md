@@ -25,16 +25,9 @@ A Decentralized peer-to-peer (P2P) chat application that allows seamless real-ti
 - Install dependencies:
   ```sh
   pip install -r requirements.txt  # For Python
-  sudo apt install gcc  # For C programs
   ```
 
 ## How to Run
-### C Program:
-sh
-gcc peer.c -o peer
-./peer
-
-
 ### Python Program:
 ```sh
 python peer.py
