@@ -13,13 +13,12 @@
   - Vivek Tej Kanakam - 230041014
 
 ## Project Description
-A peer-to-peer chat application enabling simultaneous message sending and receiving, supporting multiple peers, and allowing peer discovery.
-
+A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. It supports simultaneous message sending and receiving, peer discovery, and efficient connection management to facilitate effective networking.
 ## Features
 - **Simultaneous Send & Receive** (Multi-threading)
 - **Peer Discovery & Tracking**
-- **Custom Message Format:** `<IP_ADDRESS:PORT> <TEAM_NAME> <MESSAGE>`
-- **Bonus: Persistent Peer Connection (`connect()` function)**
+- **Custom Message Format:**
+- **Bonus: Persistent Peer Connection**
 
 ## Prerequisites
 - Install dependencies:
@@ -29,6 +28,12 @@ A peer-to-peer chat application enabling simultaneous message sending and receiv
   ```
 
 ## How to Run
+### C Program:
+sh
+gcc peer.c -o peer
+./peer
+
+
 ### Python Program:
 ```sh
 python peer.py
@@ -56,6 +61,13 @@ Server listening on port <Port>
 ### Querying Peers
 1. Select `2` from the menu.
 2. List of active peers is displayed.
+
+### Connecting to Active Peers
+1.Choose '3' from the menu.
+2.The system retrieves the list of known peers from which messages have been received.
+3.The program attempts to establish direct connections with these peers.
+4.Once connected, peers can exchange messages more efficiently, reducing connection overhead.
+5.The list of connected peers updates dynamically to reflect the new connections.
 
 ### Exiting
 - Enter `0` to quit.
