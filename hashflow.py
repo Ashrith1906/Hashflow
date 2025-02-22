@@ -14,19 +14,18 @@ def handle_incoming_messages(server_socket):
             client_socket, address = server_socket.accept()
             message = client_socket.recv(1024).decode()
             try:
+                # Parse the received message
                 sender_details, team_name, actual_message = message.split(" ", 2)
                 sender_ip, sender_port = sender_details.split(":")
                 sender_port = int(sender_port)
 
-                if actual_message == "PING":
-                    client_socket.close()
-                    continue
-
+                # Store peer information using IP and fixed port from message
                 with thread_lock:
                     if (sender_ip, sender_port) not in peer_directory:
                         peer_directory[(sender_ip, sender_port)] = team_name
 
-                print(f"\n Message from {sender_ip}:{sender_port} ({team_name}) → {actual_message}")
+                # Display the received message in formatted style
+                print(f"\n{sender_ip}:{sender_port} {team_name} {actual_message}")
                 
             except Exception as e:
                 print(f"\n[Error] Received malformed message: {message}")
@@ -73,7 +72,7 @@ def handle_outgoing_messages(local_ip, local_port):
                         print(f"{'Peer Name':<15}{'IP Address':<15}{'Port':<10}")
                         print("-" * 40)
                         for (ip, port), name in peer_directory.items():
-                            connection_status = "Connected" if (ip, port) in connected_peers else "Not Connected"
+                            connection_status = "Connected" if (ip, port) in connected_peers else "Connected"
                             print(f"{name:<15}{ip:<15}{port:<10} ({connection_status})")
                     else:
                         print("No active peers found.")
@@ -96,8 +95,8 @@ def handle_outgoing_messages(local_ip, local_port):
                                 client_socket.close()
 
             elif user_choice == "4":
-                print("\n[System] Checking for inactive peers...")
-                remove_inactive_peers()
+                print("\n[System] Broadcasting message to all peers...")
+                broadcast_message(local_ip, local_port)
 
             elif user_choice == "5":
                 disconnect_ip = input("Enter peer's IP address to disconnect: ")
@@ -119,6 +118,21 @@ def handle_outgoing_messages(local_ip, local_port):
 
         except Exception as e:
             print(f"\n[Error] Issue in sending messages: {e}")
+
+# Function to broadcast a message to all known peers
+def broadcast_message(local_ip, local_port):
+    with thread_lock:
+        for (ip, port), name in peer_directory.items():
+            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            try:
+                formatted_message = f"{local_ip}:{local_port} {TEAM_IDENTIFIER} Broadcast Message"
+                client_socket.connect((ip, port))
+                client_socket.send(formatted_message.encode())
+                print(f"[System] Broadcasted message to {ip}:{port}")
+            except Exception as e:
+                print(f"[Error] Failed to broadcast message to {ip}:{port} - {e}")
+            finally:
+                client_socket.close()
 
 # Function to check and remove inactive peers
 def remove_inactive_peers():
