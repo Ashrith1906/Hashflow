@@ -1,98 +1,77 @@
-# Hashflow
-# Peer-to-Peer Chat Application
+# Hashflow: Peer-to-Peer Chat Application
 
 ## CS 216: Introduction to Blockchain
-### Assignment 1
+### Assignment 2
+
+---
 
 ## Team Information
 - **Team Name:** Hashflow
 - **Team Members:**
-  - Kotha Ashrith Reddy       - 230001043
-  - Buditi Deepak             - 230001016
+  - Kotha Ashrith Reddy             - 230001043
+  - Buditi Deepak                      - 230001016
   - Avvaru Venkata Sai Deepak - 230001011
-  - Vivek Tej Kanakam         - 230041014
+  - Vivek Tej Kanakam               - 230041014
+
+---
 
 ## Project Description
-A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. It supports simultaneous message sending and receiving, peer discovery, and efficient connection management to facilitate effective networking.
+This repository contains a Python-based peer-to-peer (P2P) chat application that meets the requirements specified in **Assignment 2** of **CS 216: Introduction to Blockchain**. It enables:
+
+1. **Simultaneous Sending and Receiving of Messages** using multi-threading.
+2. **Peer Discovery** and tracking, storing details of known peers.
+3. **Querying Active Peers** and establishing **persistent connections**.
+4. **Broadcasting Messages** to multiple peers at once.
+5. **Disconnecting** from a specific peer or exiting the application gracefully.
+
+---
 
 ## Features
-- **Simultaneous Send & Receive** (Multi-threading)
-- **Peer Discovery & Tracking**
-- **Custom Message Format:**
-- **Bonus: Persistent Peer Connection**
 
-## Prerequisites
-- Install dependencies:
-  ```sh
-  pip install -r requirements.txt  # For Python
-  ```
+1. **Network Control Panel Menu**  
+   - **1. Start Messaging Session**: Initiate a direct messaging session with a chosen peer.  
+   - **2. View Active Peers**: Display the list of known peers.  
+   - **3. Connect to Peers**: Attempt direct connections to all known peers for efficient communication.  
+   - **4. Broadcast Message**: Send a message to all known peers simultaneously.  
+   - **5. Disconnect from a Peer**: End the connection to a specific peer.  
+   - **0. Quit Application**: Safely exit the application.
 
-## How to Run
-### Python Program:
-```sh
-python peer.py
-```
+2. **Persistent Peer Directory**  
+   - Tracks both connected peers and peers from which messages have been received.
 
-## Usage
-Upon starting, the following menu is displayed:
-```
-Enter your port number: <Port>
-Server listening on port <Port>
+3. **Simultaneous Send/Receive**  
+   - A dedicated thread listens for incoming messages (`handle_incoming_messages`), while the main thread handles user input and sends messages (`handle_outgoing_messages`).
 
-----------------------------------------
-        Network Control Panel
-----------------------------------------
-1. Start Messaging Session
-2. View Active Peers
-3. Connect to Peers
-4. Disconnect from a Peer
-0. Quit Application
-----------------------------------------
-```
+4. **Exit and Inactivity Protocols**  
+   - If a peer sends the message `exit`, it notifies and removes that peer from the network.
+   - Optionally checks for and removes inactive peers via `remove_inactive_peers()`.
 
-### Sending Messages
-1. Select `1` from the menu.
-2. Enter the recipient's IP & port.
-3. Type your message & press Enter.
+5. **Mandatory Server Connection**  
+   - Per the assignment instructions, the code demonstrates sending an initial “hello” to the server at `10.206.5.228:6555`.
+   - (You may extend this to include the other mandatory IP/port if required, e.g., `10.206.4.122:1255`.)
 
-### Querying Peers
-1. Select `2` from the menu.
-2. List of active peers is displayed.
+---
 
-### Connecting to Active Peers
-1. Choose '3' from the menu.
-2. The system retrieves the list of known peers from which messages have been received.
-3. The program attempts to establish direct connections with these peers.
-4. Once connected, peers can exchange messages more efficiently, reducing connection overhead.
-5. The list of connected peers updates dynamically to reflect the new connections.
+## Repository Structure
+- **`p2p_chat.py`** (example name)  
+  Contains the main code with:
+  - Socket handling (TCP)  
+  - Threads for sending/receiving  
+  - Menu-driven user interface  
+  - Peer directory and connection logic
 
-### Disconnect from a peer
-1. select '4' from the panel
-2. Enter the peer's IP address and port whom you wish to diconnect from.
-3. That Peer is Disconnected
+- **`README.md`**  
+  (This file) Provides instructions and documentation for setup, usage, and submission.
 
-### Exiting
-- Enter `0` to quit.
-- Sending `exit` removes a peer from the list.
+You may also include additional files if you choose to refactor or modularize the code.
 
-## Message Format
-```
-<IP_ADDRESS:PORT> <TEAM_NAME> <MESSAGE>
-```
-Example:
-```
-10.206.4.201:8080 blockchain Hello, you there?
-```
+---
 
-## Bonus Feature: `connect()`
-- Establishes persistent peer connections.
-- Newly connected peers appear in the query list.
+## Installation & Prerequisites
 
-## Notes
-- Use **fixed ports** instead of ephemeral ports.
-- Avoid duplicate (IP:PORT) entries.
+1. **Python 3** (Recommended)
+2. **Dependencies** (If any external libraries are used, list them here, e.g. `requirements.txt`)
 
-## References
-1. [Socket Programming in C](https://www.geeksforgeeks.org/socket-programming-cc/)
-2. [Linux IP Address Guide](https://www.ionos.com/digitalguide/hosting/technical-matters/get-linux-ip-address/)
-3. [Threading in Python](https://docs.python.org/3/library/threading.html)
+To install dependencies (if applicable):
+```bash
+pip install -r requirements.txt
