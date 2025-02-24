@@ -12,14 +12,17 @@
 
 ## Overview
 A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. 
-
-## Features
+It enables : 
 - **Simultaneous Send & Receive:** Multi-threaded implementation to allow concurrent message transmission and reception.
 - **Peer Discovery & Management:** Maintains a list of active peers and dynamically updates connections.
 - **Direct Messaging:** Supports one-on-one communication between peers.
 - **Broadcast Messaging:** Enables sending a message to all known peers at once.
 - **Disconnect & Exit Handling:** Allows graceful disconnection from individual peers and the entire network.
 - **Persistent Peer Directory:** Stores connected peers for efficient reconnections.
+
+## Key Features
+![WhatsApp Image 2025-02-24 at 11 42 32 PM](https://github.com/user-attachments/assets/e1af2a5e-a54f-41cb-87f3-1ba5a3e439eb)
+
 
 ## Bonus Task Implementation
 - **`handle_incoming_messages(server_socket)`** → Stores sender details in `peer_directory` upon receiving a message.  
@@ -55,6 +58,5 @@ This ensures dynamic peer discovery, connection, and active peer tracking as req
 - **Exiting form network of other peers:** Sending `exit` message notifies the connected peers before disconnecting form their active peer network.
 
 ## References
-- Assignment PDF (CS 216: Introduction to Blockchain - Assignment 2)
 - [Python Socket Programming](https://docs.python.org/3/howto/sockets.html)
 - [Threading in Python](https://docs.python.org/3/library/threading.html)
