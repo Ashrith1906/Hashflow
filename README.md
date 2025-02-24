@@ -11,7 +11,7 @@
 - **Vivek Tej Kanakam** - 230041014  
 
 ## Overview
-Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216: Introduction to Blockchain (Assignment 2)**. It enables users to send and receive messages simultaneously, manage peer connections, and broadcast messages within a decentralized network.
+A Decentralized peer-to-peer (P2P) chat application that allows seamless real-time communication between multiple users without reliance on a centralized server. 
 
 ## Features
 - **Simultaneous Send & Receive:** Multi-threaded implementation to allow concurrent message transmission and reception.
@@ -21,6 +21,14 @@ Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216:
 - **Disconnect & Exit Handling:** Allows graceful disconnection from individual peers and the entire network.
 - **Persistent Peer Directory:** Stores connected peers for efficient reconnections.
 
+## Bonus Task Implementation
+- **`handle_incoming_messages(server_socket)`** → Stores sender details in `peer_directory` upon receiving a message.  
+- **`handle_outgoing_messages(local_ip, local_port)`** → Implements **Option 3: Connect to Peers**, establishing connections and sending a "Connected" message.  
+- **`display_control_panel()`** → Adds menu option to connect to peers.  
+- **`remove_inactive_peers()`** → Removes unreachable peers from `peer_directory`.  
+
+This ensures dynamic peer discovery, connection, and active peer tracking as required by the **Bonus Task**.
+
 ## Installation & Setup
 ### Prerequisites
 - Python 3.x
@@ -28,7 +36,8 @@ Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216:
 
 ### Running the Application
 1. **Clone the Repository and Run the file**
-2. **Interact Using the Menu**
+2. - Clone the repository into your device and run the given python file. Then you will enter port number for the peer. Now you will see the menu for interacting with the network.   
+3. **Interact Using the Menu**
    - `1` - Start Messaging Session
    - `2` - View Active Peers
    - `3` - Connect to Peers
@@ -43,7 +52,7 @@ Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216:
   <IP_ADDRESS:PORT> <TEAM_NAME> <MESSAGE>
   ```
 - **Receiving Messages:** A separate thread listens for incoming messages.
-- **Exiting:** Sending `exit` notifies peers before disconnecting.
+- **Exiting form network of other peers:** Sending `exit` message notifies the connected peers before disconnecting form their active peer network.
 
 ## References
 - Assignment PDF (CS 216: Introduction to Blockchain - Assignment 2)
