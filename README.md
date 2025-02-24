@@ -39,8 +39,8 @@ This ensures dynamic peer discovery, connection, and active peer tracking as req
 
 ### Running the Application
 1. **Clone the Repository and Run the file**
-2. - Clone the repository into your device and run the given python file. Then you will enter port number for the peer. Now you will see the menu for interacting with the network.   
-3. **Interact Using the Menu**
+ - Clone the repository into your device and run the given python file. Then you will enter port number for the peer. Now you will see the menu for interacting with the network.   
+2. **Interact Using the Menu**
    - `1` - Start Messaging Session
    - `2` - View Active Peers
    - `3` - Connect to Peers
