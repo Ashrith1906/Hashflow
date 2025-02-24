@@ -27,16 +27,8 @@ Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216:
 - Basic understanding of TCP/IP networking
 
 ### Running the Application
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/hashflow-p2p-chat.git
-   cd hashflow-p2p-chat
-   ```
-2. **Start the Chat Application**
-   ```bash
-   python p2p_chat.py
-   ```
-3. **Interact Using the Menu**
+1. **Clone the Repository and Run the file**
+2. **Interact Using the Menu**
    - `1` - Start Messaging Session
    - `2` - View Active Peers
    - `3` - Connect to Peers
@@ -57,10 +49,3 @@ Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216:
 - Assignment PDF (CS 216: Introduction to Blockchain - Assignment 2)
 - [Python Socket Programming](https://docs.python.org/3/howto/sockets.html)
 - [Threading in Python](https://docs.python.org/3/library/threading.html)
-
-## Submission Details
-- **Deadline:** 22nd February 2025, 11:30 PM
-- **Submission:** Upload GitHub repository link to Moodle.
-
-**Happy Chatting!** 🚀
-
