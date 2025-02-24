@@ -1,77 +1,66 @@
-# Hashflow: Peer-to-Peer Chat Application
+# Hashflow: A Peer-to-Peer Chat Application
 
 ## CS 216: Introduction to Blockchain
-### Assignment 2
 
----
+### Assignment 1
 
-## Team Information
-- **Team Name:** Hashflow
-- **Team Members:**
-  - Kotha Ashrith Reddy             - 230001043
-  - Buditi Deepak                      - 230001016
-  - Avvaru Venkata Sai Deepak - 230001011
-  - Vivek Tej Kanakam               - 230041014
+## Team Members
+- **Kotha Ashrith Reddy** - 230001043  
+- **Buditi Deepak** - 230001016  
+- **Avvaru Venkata Sai Deepak** - 230001011  
+- **Vivek Tej Kanakam** - 230041014  
 
----
-
-## Project Description
-This repository contains a Python-based peer-to-peer (P2P) chat application that meets the requirements specified in **Assignment 2** of **CS 216: Introduction to Blockchain**. It enables:
-
-1. **Simultaneous Sending and Receiving of Messages** using multi-threading.
-2. **Peer Discovery** and tracking, storing details of known peers.
-3. **Querying Active Peers** and establishing **persistent connections**.
-4. **Broadcasting Messages** to multiple peers at once.
-5. **Disconnecting** from a specific peer or exiting the application gracefully.
-
----
+## Overview
+Hashflow is a peer-to-peer (P2P) chat application developed as part of **CS 216: Introduction to Blockchain (Assignment 2)**. It enables users to send and receive messages simultaneously, manage peer connections, and broadcast messages within a decentralized network.
 
 ## Features
+- **Simultaneous Send & Receive:** Multi-threaded implementation to allow concurrent message transmission and reception.
+- **Peer Discovery & Management:** Maintains a list of active peers and dynamically updates connections.
+- **Direct Messaging:** Supports one-on-one communication between peers.
+- **Broadcast Messaging:** Enables sending a message to all known peers at once.
+- **Disconnect & Exit Handling:** Allows graceful disconnection from individual peers and the entire network.
+- **Persistent Peer Directory:** Stores connected peers for efficient reconnections.
 
-1. **Network Control Panel Menu**  
-   - **1. Start Messaging Session**: Initiate a direct messaging session with a chosen peer.  
-   - **2. View Active Peers**: Display the list of known peers.  
-   - **3. Connect to Peers**: Attempt direct connections to all known peers for efficient communication.  
-   - **4. Broadcast Message**: Send a message to all known peers simultaneously.  
-   - **5. Disconnect from a Peer**: End the connection to a specific peer.  
-   - **0. Quit Application**: Safely exit the application.
+## Installation & Setup
+### Prerequisites
+- Python 3.x
+- Basic understanding of TCP/IP networking
 
-2. **Persistent Peer Directory**  
-   - Tracks both connected peers and peers from which messages have been received.
+### Running the Application
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/hashflow-p2p-chat.git
+   cd hashflow-p2p-chat
+   ```
+2. **Start the Chat Application**
+   ```bash
+   python p2p_chat.py
+   ```
+3. **Interact Using the Menu**
+   - `1` - Start Messaging Session
+   - `2` - View Active Peers
+   - `3` - Connect to Peers
+   - `4` - Broadcast Message
+   - `5` - Disconnect from a Peer
+   - `0` - Quit Application
 
-3. **Simultaneous Send/Receive**  
-   - A dedicated thread listens for incoming messages (`handle_incoming_messages`), while the main thread handles user input and sends messages (`handle_outgoing_messages`).
+## How It Works
+- **Upon Startup:** The application requests a **port number** from the user and displays the **local IP address**.
+- **Sending Messages:** Messages are formatted as:  
+  ```
+  <IP_ADDRESS:PORT> <TEAM_NAME> <MESSAGE>
+  ```
+- **Receiving Messages:** A separate thread listens for incoming messages.
+- **Exiting:** Sending `exit` notifies peers before disconnecting.
 
-4. **Exit and Inactivity Protocols**  
-   - If a peer sends the message `exit`, it notifies and removes that peer from the network.
-   - Optionally checks for and removes inactive peers via `remove_inactive_peers()`.
+## References
+- Assignment PDF (CS 216: Introduction to Blockchain - Assignment 2)
+- [Python Socket Programming](https://docs.python.org/3/howto/sockets.html)
+- [Threading in Python](https://docs.python.org/3/library/threading.html)
 
-5. **Mandatory Server Connection**  
-   - Per the assignment instructions, the code demonstrates sending an initial “hello” to the server at `10.206.5.228:6555`.
-   - (You may extend this to include the other mandatory IP/port if required, e.g., `10.206.4.122:1255`.)
+## Submission Details
+- **Deadline:** 22nd February 2025, 11:30 PM
+- **Submission:** Upload GitHub repository link to Moodle.
 
----
+**Happy Chatting!** 🚀
 
-## Repository Structure
-- **`p2p_chat.py`** (example name)  
-  Contains the main code with:
-  - Socket handling (TCP)  
-  - Threads for sending/receiving  
-  - Menu-driven user interface  
-  - Peer directory and connection logic
-
-- **`README.md`**  
-  (This file) Provides instructions and documentation for setup, usage, and submission.
-
-You may also include additional files if you choose to refactor or modularize the code.
-
----
-
-## Installation & Prerequisites
-
-1. **Python 3** (Recommended)
-2. **Dependencies** (If any external libraries are used, list them here, e.g. `requirements.txt`)
-
-To install dependencies (if applicable):
-```bash
-pip install -r requirements.txt
